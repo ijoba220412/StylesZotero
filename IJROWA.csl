@@ -10,7 +10,7 @@
     </author>
     <category citation-format="author-date"/>
     <category field="generic-base"/>
-    <updated>2025-03-26T15:18:56+00:00</updated>
+    <updated>2025-03-26T15:58:51+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
     <link href="https://github.com/ijoba220412/StylesZotero/blob/main/IJROWA.csl"/>
   </info>
@@ -36,7 +36,7 @@
     </names>
   </macro>
   <macro name="author-short">
-    <names variable="author">
+    <names variable="author" display="indent">
       <name form="short" delimiter="" and="text" initialize-with="" sort-separator=""/>
       <et-al font-style="italic"/>
       <substitute>
@@ -56,7 +56,7 @@
   <macro name="issued">
     <choose>
       <if variable="issued">
-        <date variable="issued">
+        <date date-parts="year" variable="issued">
           <date-part name="year"/>
         </date>
       </if>
@@ -141,16 +141,16 @@
     </sort>
     <layout suffix=".">
       <group>
-        <text macro="author"/>
-        <text macro="issued" prefix=" (" suffix=") "/>
+        <text macro="author" strip-periods="false"/>
+        <text macro="issued" prefix=" (" suffix="). "/>
         <text macro="title" suffix=". "/>
         <text macro="container" suffix=". "/>
         <text macro="publication-details"/>
         <choose>
           <if type="webpage article-journal">
-            <text variable="URL" prefix=". "/>
+            <text variable="DOI" prefix=". https://doi.org/"/>
             <group prefix=" (accessed " suffix=")">
-              <date variable="accessed">
+              <date font-variant="small-caps">
                 <date-part name="day" suffix=" "/>
                 <date-part name="month" suffix=" "/>
                 <date-part name="year"/>
