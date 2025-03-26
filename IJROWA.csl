@@ -5,13 +5,14 @@
     <id>http://www.zotero.org/styles/ijrowa</id>
     <link href="http://www.zotero.org/styles/ijrowa" rel="self"/>
     <author>
-      <name>Allan Muniz</name>
+      <name>Ijoba</name>
       <email>kronos.producao@gmail.com</email>
     </author>
     <category citation-format="author-date"/>
     <category field="generic-base"/>
-    <updated>2025-03-26T13:49:00+00:00</updated>
+    <updated>2025-03-26T14:31:28+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+    <link href="https://github.com/ijoba220412/StylesZotero/blob/main/IJROWA.csl"/>
   </info>
   <locale xml:lang="en-US">
     <terms>
@@ -25,7 +26,7 @@
   </locale>
   <macro name="author">
     <names variable="author">
-      <name delimiter="" and="symbol" delimiter-precedes-last="never" initialize-with="" name-as-sort-order="first" sort-separator=" "/>
+      <name delimiter="" and="text" delimiter-precedes-last="never" initialize-with="" name-as-sort-order="first" sort-separator=" "/>
       <et-al font-style="italic"/>
       <substitute>
         <names variable="editor"/>
@@ -36,7 +37,7 @@
   </macro>
   <macro name="author-short">
     <names variable="author">
-      <name form="short" delimiter="" and="symbol" initialize-with="" sort-separator=""/>
+      <name form="short" delimiter="" and="text" initialize-with="" sort-separator=""/>
       <et-al font-style="italic"/>
       <substitute>
         <names variable="editor"/>
@@ -126,7 +127,7 @@
       <key macro="issued"/>
       <key macro="author"/>
     </sort>
-    <layout delimiter=", " prefix="(" suffix=")">
+    <layout delimiter="; " prefix="(" suffix=")">
       <group delimiter=" ">
         <text macro="author-short"/>
         <text macro="issued"/>
@@ -146,7 +147,7 @@
         <text macro="container" suffix=". "/>
         <text macro="publication-details"/>
         <choose>
-          <if type="webpage">
+          <if type="webpage article-journal">
             <text variable="URL" prefix=". "/>
             <group prefix=" (accessed " suffix=")">
               <date variable="accessed">
